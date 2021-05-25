@@ -1,43 +1,24 @@
 from setuptools import setup
-from setuptools.command.build_py import build_py
-
-
-class BuildPyCommand(build_py):
-    def run(self):
-        import nltk
-
-        nltk.download("stopwords")
-        nltk.download("wordnet")
-        nltk.download("averaged_perceptron_tagger")
-        nltk.download("punkt")
-
-        build_py.run(self)
 
 
 setup(
-    cmdclass={"build_py": BuildPyCommand},
-    name="techminer",
+    name="EOS",
     version="0.1.0",
     author="Juan D. Velasquez",
     author_email="jdvelasq@unal.edu.co",
     license="MIT",
-    url="http://github.com/jdvelasq/techminer",
-    description="Tech Mining of Bibliograpy",
-    long_description="Tech Mining of Bibliograpy",
-    keywords="bibliograpy",
+    url="http://github.com/jdvelasq/evolutionary-optimization-suite",
+    description="Evolutionary Algorithms Suite",
+    long_description="Evolutionary Optimization Suite",
+    keywords="Optimization",
     platforms="any",
-    provides=["techminer"],
+    provides=["EOS"],
     install_requires=[
-        "squarify",
-        "nltk==3.5",
-        "cdlib",
-        "pyvis",
-        "networkx",
-        "ipywidgets",
-        "textblob",
+        "matplotlib",
+        "numpy",
     ],
-    packages=["techminer", "techminer.plots", "techminer.core", "techminer.gui"],
-    package_dir={"techminer": "techminer"},
+    packages=["EOS"],
+    package_dir={"EOS": "EOS"},
     include_package_data=True,
     classifiers=[
         "Development Status :: 3 - Alpha",

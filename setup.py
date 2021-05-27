@@ -2,23 +2,23 @@ from setuptools import setup
 
 
 setup(
-    name="EOS",
-    version="0.1.0",
+    name="EAOS",
+    version="0.0.1",
     author="Juan D. Velasquez",
     author_email="jdvelasq@unal.edu.co",
     license="MIT",
     url="http://github.com/jdvelasq/evolutionary-optimization-suite",
     description="Evolutionary Algorithms Suite",
-    long_description="Evolutionary Optimization Suite",
+    long_description="Evolutionary Algorithms Optimization Suite",
     keywords="Optimization",
     platforms="any",
-    provides=["EOS"],
+    provides=["EAOS"],
     install_requires=[
         "matplotlib",
         "numpy",
     ],
-    packages=["EOS"],
-    package_dir={"EOS": "EOS"},
+    packages=["EAOS"],
+    package_dir={"EAOS": "EAOS"},
     include_package_data=True,
     classifiers=[
         "Development Status :: 3 - Alpha",

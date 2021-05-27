@@ -109,7 +109,7 @@ class TestFunction:
         #  plt.show()
 
 
-class Ackely(TestFunction):
+class Ackley(TestFunction):
     def __init__(self, n_dim=2):
         self.n_dim = n_dim
         self.LB = [-30] * n_dim

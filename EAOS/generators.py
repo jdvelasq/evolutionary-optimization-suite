@@ -7,9 +7,9 @@ class RandomUniform:
     # Genera una población inicial aleatoria
     # con valores uniformemente distribuidos
     #
-    def __init__(self, pop_size, low, high, seed=None, **kwargs):
+    def __init__(self, popsize, low, high, seed=None, **kwargs):
 
-        self.pop_size = pop_size
+        self.popsize = popsize
         self.low = low
         self.high = high
         self.kwargs = kwargs
@@ -33,7 +33,7 @@ class RandomUniform:
                     **self.kwargs,
                 }
             )
-            for _ in range(self.pop_size)
+            for _ in range(self.popsize)
         ]
 
         return population
@@ -44,8 +44,8 @@ class RandomBinary:
     # Genera una población inicial aleatoria
     # con valores uniformemente distribuidos
     #
-    def __init__(self, pop_size, n_bits, seed=None, **kwargs):
-        self.pop_size = pop_size
+    def __init__(self, popsize, n_bits, seed=None, **kwargs):
+        self.popsize = popsize
         self.n_bits = n_bits
         self.kwargs = kwargs
 
@@ -59,15 +59,13 @@ class RandomBinary:
             Individual(
                 {
                     **{
-                        "x": np.where(
-                            self.rng.uniform(size=self.n_bits) < 0.5, 0.0, 1.0
-                        ),
+                        "x": np.where(self.rng.uniform(size=self.n_bits) < 0.5, 0, 1),
                         "fn_x": None,
                     },
                     **self.kwargs,
                 }
             )
-            for _ in range(self.pop_size)
+            for _ in range(self.popsize)
         ]
 
         return population
